@@ -16,4 +16,4 @@ The image will be commited to the local registry.
 #### Checking the Image:
 * Get the image id: `docker image ls`
 * Run a container from the image: `docker run -d -p 4000:80 <image_id>`
-* The nginx server from the image should accessible on localhost:4000 e.g. `curl localhost:4000`
+* The nginx server from the image should be accessible on localhost:4000 e.g. `curl localhost:4000`
