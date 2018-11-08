@@ -1,4 +1,13 @@
 {
+    "variables": {
+        "dhub_user": "",
+        "dhub_pwd": "",
+        "repository": "ubuntu",
+        "tag":"nginx"
+    },
+    "sensitive-variables": [
+        "dhub_pwd"
+    ],
     "builders": [
         {
             "type": "docker",
@@ -15,5 +24,20 @@
             "type": "shell",
             "script": "scripts/install_nginx.sh"
         }
+    ],
+    "post-processors": [
+        [
+            {
+                "type": "docker-tag",
+                "repository": "{{user `dhub_user`}}/{{user `repository`}}",
+                "tag": "{{user `tag`}}"
+            },
+            {
+                "type": "docker-push",
+                "login": true,
+                "login_username": "{{user `dhub_user`}}",
+                "login_password": "{{user `dhub_pwd`}}"
+            }
+        ]
     ]
 }
