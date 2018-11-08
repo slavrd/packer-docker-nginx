@@ -1,0 +1,19 @@
+{
+    "builders": [
+        {
+            "type": "docker",
+            "image": "ubuntu:xenial",
+            "commit": true,
+            "changes": [
+                "EXPOSE 80",
+                "ENTRYPOINT [\"nginx\", \"-g\", \"daemon off;\"]"
+            ]
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "scripts/install_nginx.sh"
+        }
+    ]
+}
