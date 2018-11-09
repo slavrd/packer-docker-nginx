@@ -11,7 +11,7 @@ A packer template that builds docker image with nginx and a vagrant file for a d
 
 #### Building the Docker image and pushing it ot Docker Hub with Packer:
 * Run: `packer build -var 'dhub_user=<username>' -var 'dhub_pwd=<password>' template.json`<br>
-This will push the image to the Docker Hub registry under repository `ubuntu` and tag `nginx`
+This will push the image to the Docker Hub registry under repository `nginx` and tag `1.10.3`
 
 #### Checking the Image:
 * Get the image id: `docker image ls`

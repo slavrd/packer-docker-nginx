@@ -2,8 +2,8 @@
     "variables": {
         "dhub_user": "",
         "dhub_pwd": "",
-        "repository": "ubuntu",
-        "tag":"nginx"
+        "repository": "nginx",
+        "tag":"1.10.3"
     },
     "sensitive-variables": [
         "dhub_pwd"
