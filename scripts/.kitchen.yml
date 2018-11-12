@@ -1,0 +1,18 @@
+---
+driver:
+  name: docker 
+
+provisioner:
+  name: shell
+
+platforms:
+  - name: docker/nginx64
+    driver:
+      image: slavrd/nginx:1.10.3
+      platform: ubuntu
+
+verifier:
+  name: inspec
+
+suites:
+  - name: default

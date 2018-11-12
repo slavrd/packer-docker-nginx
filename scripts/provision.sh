@@ -1,10 +1,11 @@
 #!/bin/bash
 
-which curl docker make ruby || {
+which curl docker make ruby ruby-dev || {
   sudo apt-get update
   sudo apt-get install -y curl docker.io make ruby
   sudo usermod -a -G docker ubuntu
   sudo gem install rubyzip
+  sudo gem install bundler
 }
 
 which packer || {
