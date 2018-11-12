@@ -17,3 +17,11 @@ This will push the image to the Docker Hub registry under repository `nginx` and
 * Get the image id: `docker image ls`
 * Run a container from the image: `docker run -d -p 4000:80 <image_id>`
 * The nginx server from the image should be accessible on localhost:4000 e.g. `curl localhost:4000`
+
+#### Running Kitchen tests:
+* Install gems from Gemfile: `bundle install`
+* List kitchen environment - `bundle exec kitchen list`
+* Build kitchen environment - `bundle exec kitchen converge`
+* Run kitchen tests - `bundle exec kitchen verify`
+* Destory kitchen environment - `bundle exec kitchen destroy`
+* Automatically build, test, destory - `bundle exec kitchen test`
