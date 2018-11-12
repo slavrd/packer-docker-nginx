@@ -2,8 +2,9 @@
 
 which curl docker make ruby ruby-dev || {
   sudo apt-get update
-  sudo apt-get install -y curl docker.io make ruby ruby-dev
+  sudo apt-get install -y curl docker.io make ruby ruby-dev ruby-build
   sudo usermod -a -G docker ubuntu
+  sudo usermod -a -G docker vagrant
   sudo gem install rubyzip
   sudo gem install bundler
 }
